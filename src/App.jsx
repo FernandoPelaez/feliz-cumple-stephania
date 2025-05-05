@@ -7,8 +7,17 @@ export default function App() {
   const navigate = useNavigate();
   const { toggleMusic, play } = useOutletContext();
 
-  const titulo = '🎉 ¡Feliz Cumpleaños Maria! 🎉';
+  const titulo = '🎀 ¡Feliz Cumpleaños, Stephania! 🎂💖';
   const [tituloAnimado, setTituloAnimado] = useState('');
+  const gifs = [
+    '/assets/gif1.gif',
+    '/assets/gif2.gif',
+    '/assets/gif3.gif',
+    '/assets/gif4.gif',
+    '/assets/gif5.gif',
+    '/assets/gif6.gif',
+  ];
+  const [indiceGif, setIndiceGif] = useState(0);
 
   useEffect(() => {
     const shootConfetti = () => {
@@ -28,6 +37,13 @@ export default function App() {
       clearTimeout(timer1);
       clearTimeout(timer2);
     };
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndiceGif((prev) => (prev + 1) % gifs.length);
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   const fullMessage = `Felicidades a la niña más hermosa y chipilona. 
@@ -103,11 +119,19 @@ Que nunca te falte cariño del bueno, tranquilidad en el alma y motivos para ser
 
         <div className="message-text">{displayedText}</div>
 
-        <img
-          src="./assets/img5.gif"
-          alt="Maria celebrando su cumpleaños"
-          className="poni-img"
-        />
+        {/* Contenedor de GIF dinámico */}
+        <div style={{ textAlign: 'center', margin: '30px 0' }}>
+          <img
+            src={gifs[indiceGif]}
+            alt={`gif ${indiceGif + 1}`}
+            style={{
+              maxWidth: '250px',
+              borderRadius: '20px',
+              boxShadow: '0 0 10px rgba(0,0,0,0.2)',
+              transition: 'opacity 0.5s ease-in-out',
+            }}
+          />
+        </div>
 
         <div className="buttons">
           <button

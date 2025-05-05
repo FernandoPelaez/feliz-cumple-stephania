@@ -18,7 +18,7 @@ export default function Sorpresa() {
   const fireworksRef = useRef(null);
 
   useEffect(() => {
-    const titulo = '¡Pide un Deseo! ';
+    const titulo = '¡Cierra los ojos y pide un deseo!';
     let i = 0;
     const intervalo = setInterval(() => {
       setTituloAnimado(titulo.slice(0, i));

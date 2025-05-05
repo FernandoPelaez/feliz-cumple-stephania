@@ -5,26 +5,26 @@ Este proyecto fue desarrollado como una sorpresa para una persona muy especial: 
 
 ## 🧁 ¿Qué incluye?
 
-- 🎈 Animaciones flotantes y efectos visuales hermosos
-- 🎁 Página de bienvenida con mensaje animado letra por letra
-- 🎂 Pastel animado con velitas encendidas
-- 💌 Carta sorpresa con mensaje oculto
-- ✨ Transiciones suaves, globos decorativos y fuegos artificiales
+- 🎈 Animaciones flotantes y efectos visuales hermosos  
+- 🎁 Página de bienvenida con mensaje animado letra por letra  
+- 🎂 Pastel animado con velitas encendidas  
+- 💌 Carta sorpresa con mensaje oculto  
+- ✨ Transiciones suaves, globos decorativos y fuegos artificiales  
 
 ## 🚀 Tecnologías
 
-- React 19
-- Vite
-- React Router DOM
-- canvas-confetti
-- fireworks-js
-- CSS animations
-- GitHub Pages
+- React 19  
+- Vite  
+- React Router DOM  
+- canvas-confetti  
+- fireworks-js  
+- CSS animations  
+- GitHub Pages  
 
 ## 🔧 Instalación local
 
 ```bash
-git clone https://github.com/FernandoPelaez/Happy-Birthday-Stephania-.git
-cd Happy-Birthday-Stephania-
+git clone https://github.com/FernandoPelaez/feliz-cumple-stephania.git
+cd feliz-cumple-stephania
 npm install
 npm run dev
