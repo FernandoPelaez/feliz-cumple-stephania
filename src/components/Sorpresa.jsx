@@ -11,9 +11,8 @@ export default function Sorpresa() {
   const [mostrarFuegos, setMostrarFuegos] = useState(true);
   const [globos, setGlobos] = useState([]);
   const [mostrarPastel, setMostrarPastel] = useState(true);
-  const [mostrarCarta, setMostrarCarta] = useState(false);
-  const [cartaAbierta, setCartaAbierta] = useState(false);
   const [tituloAnimado, setTituloAnimado] = useState('');
+  const [mostrarMensajeFinal, setMostrarMensajeFinal] = useState(false);
   const navigate = useNavigate();
   const fireworksRef = useRef(null);
 
@@ -126,7 +125,8 @@ export default function Sorpresa() {
 
         setTimeout(() => {
           setMostrarPastel(false);
-          setMostrarCarta(true);
+          setGlobos([]);
+          setMostrarMensajeFinal(true);
         }, 10000);
       }, 3000);
     }
@@ -137,7 +137,9 @@ export default function Sorpresa() {
 
   return (
     <div className="sorpresa">
-      <h1 className="mensaje titulo-animado">{tituloAnimado}</h1>
+      {!mostrarMensajeFinal && (
+        <h1 className="mensaje titulo-animado">{tituloAnimado}</h1>
+      )}
 
       <div className="guirnaldas">
         {banderas.map((color, index) => (
@@ -145,7 +147,7 @@ export default function Sorpresa() {
         ))}
       </div>
 
-      {globos.map((globo) => (
+      {!mostrarMensajeFinal && globos.map((globo) => (
         <div
           key={globo.id}
           className="globo-decorado"
@@ -204,18 +206,22 @@ export default function Sorpresa() {
         </div>
       )}
 
-      {mostrarCarta && (
-        <div className="carta-contenedor">
-          <div className={`carta ${cartaAbierta ? 'abierta' : ''}`} onClick={() => setCartaAbierta(true)}>
-            <div className="frente">💌</div>
-            <div className="dorso">
-              <p>Cada detalle lo hice pensando en ti...  
-                 porque mereces cosas bonitas que te hagan sonreír.
-                 Con cariño infinito, Fer ✨💗</p>
-            </div>
+        {mostrarMensajeFinal && (
+          <div className="mensaje-final">
+            <div className="constelacion">Stephania</div>
+            <div className="emoji-linea">⭐ ✨ 💫 🌟 ✨ 💫 🌙 ⭐ ✨</div>
+
+            <p className="mensaje-texto">
+              Tu nombre debería estar en el cielo...<br />
+              ...porque desde que llegaste, todo brilla diferente ✨🌌<br /><br />
+              Gracias por existir, por ser tú, por ser magia.<br />
+              Este rincón digital siempre va a esperarte,<br />
+              como yo, con una sonrisa y un millón de razones para celebrarte.<br /><br />
+              Con cariño eterno,<br />
+              <strong>Fer 💗</strong>
+            </p>
           </div>
-        </div>
-      )}
+        )}
 
       {!mostrarFuegos && (
         <style>{`.fireworks-canvas { display: none !important; }`}</style>
