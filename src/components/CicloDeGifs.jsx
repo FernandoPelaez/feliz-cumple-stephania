@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 export default function CicloDeGifs() {
   const gifs = [
-    '/assets/gif1.gif',
-    '/assets/gif2.gif',
-    '/assets/gif3.gif',
-    '/assets/gif4.gif',
-    '/assets/gif5.gif',
-    '/assets/gif6.gif',
+    'assets/gif1.gif',
+    'assets/gif2.gif',
+    'assets/gif3.gif',
+    'assets/gif4.gif',
+    'assets/gif5.gif',
+    'assets/gif6.gif',
   ];
   const [indice, setIndice] = useState(0);
 

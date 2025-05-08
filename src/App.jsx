@@ -9,13 +9,14 @@ export default function App() {
 
   const titulo = '🎀 ¡Feliz Cumpleaños, Stephania! 🎂💖';
   const [tituloAnimado, setTituloAnimado] = useState('');
+  
   const gifs = [
-    '/assets/gif1.gif',
-    '/assets/gif2.gif',
-    '/assets/gif3.gif',
-    '/assets/gif4.gif',
-    '/assets/gif5.gif',
-    '/assets/gif6.gif',
+    'assets/gif1.gif',
+    'assets/gif2.gif',
+    'assets/gif3.gif',
+    'assets/gif4.gif',
+    'assets/gif5.gif',
+    'assets/gif6.gif',
   ];
   const [indiceGif, setIndiceGif] = useState(0);
 
